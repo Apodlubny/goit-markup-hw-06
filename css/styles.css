@@ -658,12 +658,17 @@ transition: transform var(--main-transition);
   border-radius: 50%;
   cursor: pointer;
   background: transparent;
+  transition: fill var(--main-transition);
 }
 .icon-close {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.modal-close-btn:hover, .modal-close-btn:focus  {
+  fill: var(--accent-color);
+
 }
 /* modal form */
 .modal-form {
@@ -691,10 +696,17 @@ margin-bottom: 30px;
   padding: 0 42px;
   color: var(--logo-color);
   outline-color: var(--accent-color);
+  transition: border-color var(--main-transition);
 }
 .modal-input::placeholder {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
+  }
+  .modal-input:hover, .modal-input:focus, .modal-comment:hover, .modal-comment:focus {
+    border-color: var(--accent-color);
+  }
+  .modal-input:hover + .form-icon {
+    fill: var(--accent-color);
   }
 .form-label {
   position: relative;
@@ -718,6 +730,7 @@ margin-bottom: 30px;
   position: absolute;
   top: 11px;
   left: 12px;
+  transition: fill var(--main-transition);
 }
 .modal-comment {
   display: block;
@@ -726,6 +739,21 @@ margin-bottom: 30px;
   resize: none;
 }
 
+
+/* checkbox styloing */
+.label-checkbox {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.checkbox-text {
+  display: block;
+  text-align: center;
+  line-height: 1.71;
+  margin-left: 20px;
+}
 
 .policy-link {
   color: var(--accent-color);
@@ -740,23 +768,28 @@ margin-bottom: 30px;
 }
 .modal-checkbox:checked + .check-icon {
   background-color: var(--accent-color);
-  border: var(--accent-color);
-}
-.label-checkbox {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  border-color: transparent ;
 }
 
+
 .check-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 16px;
   height: 15px;
-  border: 2px solid #000000;
+  border: 2px solid var(--logo-color);
   border-radius: 2px;
-  /* margin-right: 7px; */
+  background-size: contain;
+  background-origin: border-box;
+  transform: translateY(-50%);
+  transition: background-color var(--main-transition), border-color var(--main-transition);
+  fill: var(--primary-white);
   
-
+}
+.modal .hero-button {
+  margin-left: auto;
+  margin-right: auto;
 }
