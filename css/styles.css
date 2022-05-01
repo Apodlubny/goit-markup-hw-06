@@ -556,6 +556,9 @@ svg {
 .address-box {
   margin-right: 70px;
 }
+.social-box {
+  margin-right: 93px;
+}
 .social-box .text,
 .subscribe-box .text {
   text-transform: uppercase;
@@ -587,7 +590,7 @@ svg {
 }
 /* subscribe styling */
 .subscribe-box {
-  margin-left: 93px;
+  margin-left: auto;
 }
 .subscribe-mail {
   width: 570px;
@@ -688,7 +691,7 @@ svg {
   line-height: 1.15;
   text-align: center;
   color: var(--title-color);
-  margin-bottom: 30px;
+  margin-bottom: 12px;
 }
 .modal-input {
   -webkit-appearance: none;
@@ -700,6 +703,7 @@ svg {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   background-color: transparent;
+  outline: transparent;
   padding: 0 42px;
   color: var(--logo-color);
   outline-color: var(--accent-color);
@@ -716,30 +720,32 @@ svg {
 .modal-comment:focus {
   border-color: var(--accent-color);
 }
-.modal-input:hover + .form-icon {
+.modal-input:hover + .form-icon,
+.modal-input:focus + .form-icon {
   fill: var(--accent-color);
 }
 .form-label {
   position: relative;
-  margin-bottom: 28px;
+  margin-bottom: 10px;
   transition: fill var(--main-transition);
+}
+.form-label.last-label {
+  margin-bottom: 20px;
 }
 
 .form-label:focus-within {
   fill: --accent-color;
 }
 .form-text {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
   font-size: 0.75rem;
   line-height: 1.16;
   letter-spacing: 0.01em;
-  transform: translateY(-110%);
+  margin-bottom: 4px;
 }
 .form-icon {
   position: absolute;
-  top: 11px;
+  top: 50%;
   left: 12px;
   transition: fill var(--main-transition);
 }
@@ -752,21 +758,22 @@ svg {
 
 /* checkbox styloing */
 .label-checkbox {
-  position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
 }
 .checkbox-text {
-  display: block;
+  margin-left: 8px;
   text-align: center;
   line-height: 1.71;
-  margin-left: 20px;
 }
 
 .policy-link {
   color: var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
 }
 .modal-checkbox {
   position: absolute;
@@ -779,11 +786,12 @@ svg {
   background-color: var(--accent-color);
   border-color: transparent;
 }
+.modal-checkbox:focus + .check-icon,
+.modal-checkbox:hover + .check-icon {
+  border-color: var(--accent-color);
+}
 
 .check-icon {
-  position: absolute;
-  top: 50%;
-  left: 14px;
   display: flex;
   align-items: center;
   width: 16px;
@@ -792,7 +800,6 @@ svg {
   border-radius: 2px;
   background-size: contain;
   background-origin: border-box;
-  transform: translateY(-50%);
   transition: background-color var(--main-transition),
     border-color var(--main-transition);
   fill: var(--primary-white);
